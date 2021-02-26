@@ -59,6 +59,10 @@ Route::post('signup', 'Auth\RegisterUserController@register')->name('signup');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('test_auto', function(){
+  dd('HEllo this is Auto deploy test');
+});
+
 Route::get('send_notification','Admin\VideoController@send_notification');
 
 Route::group(['middleware'=>['auth','web']],function(){
