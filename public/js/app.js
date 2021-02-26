@@ -109564,7 +109564,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   authHost: APP_URL,
   authEndpoint: '/broadcasting/auth',
   broadcaster: 'pusher',
-  key: ebe8cea6bf179025d0a0,
+  key: 'ebe8cea6bf179025d0a0',
   cluster: 'ap2',
   encrypted: true
 });
