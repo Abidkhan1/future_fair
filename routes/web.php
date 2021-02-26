@@ -60,7 +60,7 @@ Route::post('signup', 'Auth\RegisterUserController@register')->name('signup');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('test_auto', function(){
-  dd('HEllo this is Auto deploy test');
+  event(new App\Events\RealTimeMessage('THis is title', 'This is message'));
 });
 
 Route::get('send_notification','Admin\VideoController@send_notification');
