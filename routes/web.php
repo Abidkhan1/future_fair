@@ -59,12 +59,14 @@ Route::post('signup', 'Auth\RegisterUserController@register')->name('signup');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('send_notification','Admin\VideoController@send_notification');
+
 Route::group(['middleware'=>['auth','web']],function(){
     Route::group(['namespace' => 'Admin','middleware' => 'role:admin'], function(){
 
         //Notification Routes
         Route::get('create_notification','VideoController@create_notification')->name('create_notification');
-        Route::post('send_notification','VideoController@send_notification');
+
         //Notification Routes
 
         // Company Routes starts here
