@@ -28,4 +28,6 @@
 <script src="{{ asset('/js/app.js') }}" defer></script>
 <script>
    var APP_URL = {!! json_encode(url('/').'/') !!}
+   var APP_URL = {!! json_encode(url('/').'/') !!}
+   window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 </script>

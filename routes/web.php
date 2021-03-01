@@ -63,7 +63,8 @@ Route::get('test_auto', function(){
   event(new App\Events\RealTimeMessage('THis is title', 'This is message'));
 });
 
-Route::get('send_notification','Admin\VideoController@send_notification');
+Route::get('send_notification_test','Admin\VideoController@send_notification_test');
+
 
 Route::group(['middleware'=>['auth','web']],function(){
     Route::group(['namespace' => 'Admin','middleware' => 'role:admin'], function(){
@@ -71,6 +72,7 @@ Route::group(['middleware'=>['auth','web']],function(){
         //Notification Routes
         Route::get('create_notification','VideoController@create_notification')->name('create_notification');
 
+        Route::post('send_notification','VideoController@send_notification');
         //Notification Routes
 
         // Company Routes starts here
