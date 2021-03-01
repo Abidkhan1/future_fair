@@ -19,12 +19,16 @@ class VideoController extends Controller
     public function send_notification(Request $request)
     {
       // $users = User::all();
-      $title = 'Alert! This is title from Admin';
-      $message = "This is Ping message from Admin, kindly ignore this message.";
+      $title = '';
+      $message = '';
+      
       if ($request->title) {
         $title = $request->title;
-      }else if($request->message) {
+      }if($request->message) {
         $message = $request->message;
+      }else {
+        $title = 'Alert! This is title from Admin';
+        $message = "This is Ping message from Admin, kindly ignore this message.";
       }
       // $notification = new AdminNotification();
       // $notification->title = $title;

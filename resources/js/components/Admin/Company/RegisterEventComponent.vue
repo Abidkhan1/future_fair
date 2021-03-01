@@ -121,12 +121,15 @@
           },//slotChanged
             registerEvent(){
                 axios.post(APP_URL+'register_event/',{
-                  _token: csrfToken,
                   company_id:this.company_id,
                   pavillion_id:this.pavillion_id,
                   event_id:this.event_id,
                   slot_id:this.slot_id,
                   slot_name:this.slots[this.slot_id],
+                },{
+                  headers: {
+                      'X-CSRF-TOKEN':csrfToken
+                  }
                 }).then(res=>{
                     Swal.fire(
                       'Good job!',

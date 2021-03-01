@@ -5634,12 +5634,15 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       axios.post(APP_URL + 'register_event/', {
-        _token: csrfToken,
         company_id: this.company_id,
         pavillion_id: this.pavillion_id,
         event_id: this.event_id,
         slot_id: this.slot_id,
         slot_name: this.slots[this.slot_id]
+      }, {
+        headers: {
+          'X-CSRF-TOKEN': csrfToken
+        }
       }).then(function (res) {
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Good job!', 'Slot updated Successfully!', 'success');
         _this3.slot_id = '';
